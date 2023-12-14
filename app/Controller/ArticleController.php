@@ -32,7 +32,7 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        // $this->dd($id);
+        $this->dd($id);
 
         $article = PostModel::findById($id);
         // $this->dd($article);
@@ -42,5 +42,10 @@ class ArticleController extends Controller
             'article' => $article,
             'user' => $user,
         ));
+    }
+
+    public function delete($id)
+    {
+        $this->dd($id);
     }
 }
