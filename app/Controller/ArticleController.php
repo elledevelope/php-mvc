@@ -25,11 +25,20 @@ class ArticleController extends Controller
             'articles' => $articles,
             'user' => $user,
         ));
+    }
 
+    public function show($id)
+    {
+        // $this->dd($id);
 
-        // $this->render('app.default.frontpage',array(
-        //     'message' => $message,
-        // ));
+        $article = PostModel::findById($id);
+        // $this->dd($article);
+        $user = new UserModel;
+
+        $this->render('app.articles.show', array(
+            'article' => $article,
+            'user' => $user,
+        ));
 
     }
 }
