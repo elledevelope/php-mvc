@@ -1,28 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">myApp</a>
+        <a class="navbar-brand text-info" href="#">myApp</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="<?= $view->path('home'); ?>">Home</a>
+                    <a class="text-light" href="<?= $view->path('home'); ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= $view->path('articles'); ?>">Articles</a>
+                    <a class="text-light" href="<?= $view->path('articles'); ?>">Articles</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= $view->path('contact'); ?>">Contact</a>
+                    <a class="text-light" href="<?= $view->path('contact'); ?>">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= $view->path('about'); ?>">About</a>
+                    <a class="text-light" href="<?= $view->path('about'); ?>">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= $view->path('single', array(12)); ?>">Single</a>
+                    <a class="text-light" href="<?= $view->path('single', array(12)); ?>">Single</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= $view->path('single2', array(12, 'dedede')); ?>">Single2</a>
+                    <a class="text-light" href="<?= $view->path('single2', array(12, 'dedede')); ?>">Single2</a>
                 </li>
             </ul>
         </div>

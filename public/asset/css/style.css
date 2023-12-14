@@ -16,3 +16,11 @@ ul {
 nav ul li {
 padding: 10px;
 }
+
+h2 {
+    margin-top: 150px;
+}
+
+button a {
+    text-decoration: none;
+}
