@@ -1,0 +1,4 @@
+First name and last names concatenated:
+<p>
+    <strong>Publiée par :</strong> <?=$user->findById($article->author, 'id')->firstname . ' ' . $user->findById($article->author, 'id')->lastname?> le <?=$article->modifiedAt?>
+</p>
