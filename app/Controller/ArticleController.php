@@ -21,9 +21,12 @@ class ArticleController extends Controller
         $user = new UserModel; //pour lister tous les users
         // $this->dd($user);
 
+        $articlesCount = PostModel::count();
+
         $this->render('app.articles.index', array(
             'articles' => $articles,
             'user' => $user,
+            'articlesCount' => $articlesCount,
         ));
     }
 
@@ -39,6 +42,5 @@ class ArticleController extends Controller
             'article' => $article,
             'user' => $user,
         ));
-
     }
 }
