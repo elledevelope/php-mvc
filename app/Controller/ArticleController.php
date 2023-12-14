@@ -14,16 +14,17 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $arcticles = PostModel::all(); //pour lister tous les articles
-        $this->dd($arcticles);
+        $articles = PostModel::all(); //pour lister tous les articles
+        // $this->dd($articles);
+
+        $this->render('app.articles.index',array(
+            'articles' => $articles,
+        ));
     
         // $this->render('app.default.frontpage',array(
         //     'message' => $message,
         // ));
 
-
     }
-
-
 
 }
