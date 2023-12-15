@@ -15,7 +15,7 @@
             <?= $formAdd->textarea('content') ?>
             <?= $formAdd->error('content') ?> <br>
 
-            <?= $formAdd->submit('submit', $value = 'Send',  ['class' => 'btn btn-primary']) ?>
+            <?= $formAdd->submit('submitted', $value = 'Send',  ['class' => 'btn btn-primary']) ?>
         </div>
     </form>
 </section>
