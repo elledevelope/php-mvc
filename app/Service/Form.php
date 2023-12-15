@@ -47,7 +47,7 @@ class Form
      */
     public function input($name,$type = 'text',$data = null)
     {
-        return $this->arround('<input type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'.$this->getValue($name,$data).'">');
+        return $this->arround('<input class="form-control" type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'.$this->getValue($name,$data).'">');
     }
 
     /**
@@ -57,7 +57,7 @@ class Form
      */
     public function textarea($name, $data = null)
     {
-        return $this->arround('<textarea name="'.$name.'">'.$this->getValue($name,$data).'</textarea>');
+        return $this->arround('<textarea class="form-control" name="'.$name.'">'.$this->getValue($name,$data).'</textarea>');
     }
 
     /**
@@ -67,7 +67,7 @@ class Form
      */
     public function submit($name = 'submitted',$value='Envoyer')
     {
-        return '<input type="submit" name="'.$name.'" id="'.$name.'" value="'.$value.'">';
+        return '<input class="btn btn-primary" type="submit" name="'.$name.'" id="'.$name.'" value="'.$value.'">';
     }
 
     /**
@@ -77,7 +77,7 @@ class Form
     public function error($name)
     {
         if(!empty($this->error[$name])) {
-            return '<span class="error">'.$this->error[$name].'</span>';
+            return '<span class="error text-danger">'.$this->error[$name].'</span>';
         }
         return null;
     }
@@ -90,7 +90,7 @@ class Form
     public function label($name,$label = null)
     {
         //$text = ($label === null) ? $name : $label;
-        return '<label for="'.$name.'">'.ucfirst($name).'</label>';
+        return '<label class="form-label" for="'.$name.'">'.ucfirst($name).'</label>';
     }
 
     /**
@@ -102,7 +102,7 @@ class Form
      */
     public function select($name, $entitys, $column, $data = '', $idd = 'id')
     {
-        $html = '<select name="'.$name.'">';
+        $html = '<select class="form-select" name="'.$name.'">';
         foreach ($entitys as $entity) {
             if(!empty($data) && $data == $entity->$idd){
                 $selected = ' selected="selected"';
