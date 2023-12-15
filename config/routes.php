@@ -9,6 +9,7 @@ $routes =  [
 
     //articles:
     ['articles', 'article', 'index'],
-    ['article', 'article', 'show', ['id']],
-    ['delete', 'article', 'delete', ['id']]
+    ['article', 'article', 'show', ['id']], //single article page
+    ['delete', 'article', 'delete', ['id']], //delete
+    ['add', 'article', 'add'] //form
 ];
