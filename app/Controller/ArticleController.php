@@ -46,13 +46,24 @@ class ArticleController extends Controller
             // $this->dd($postArticle);   
 
             $validateArticle = new Validation;
-            $errors['titre'] = $validateArticle->textValid($postArticle['titre'], 'titre', 2, 10);
-            $errors['content'] = $validateArticle->textValid($postArticle['content'], 'content', 10, 500);
+            $errors['titre'] = $validateArticle->textValid($postArticle['titre'], 'titre', 4, 10);
+            $errors['content'] = $validateArticle->textValid($postArticle['content'], 'contenu', 10, 500);
+
+            if ($validateArticle->IsValid($errors)) :
+            //insertion des données du formulaire en bd:
+            PostModel::insert($postArticle);
+            $this->redirect('articles');
+            endif;
         endif;
 
+   
+
         $formAdd = new Form($errors);
+        $users = UserModel::all();
+
         $this->render('app.articles.addarticle', array(
             'formAdd' => $formAdd,
+            'users' => $users,
         ));
     }
 
