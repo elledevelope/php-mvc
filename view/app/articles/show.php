@@ -10,6 +10,11 @@
     <button class="btn btn-primary me-md-2" type="button">
         <a class="text-light" href="<?= $view->path('articles'); ?>">Back to articles</a>
     </button>
+
+    <button class="btn btn-primary me-md-2" type="button">
+        <a class="text-light" href="<?= $view->path('edit', [$article->id]); ?>">Edit</a>
+    </button>
+
     <button class="btn btn-danger" type="button">
     <a class="text-light" href="<?= $view->path('delete', [$article->id]); ?>">Supprimer</a>        
     </button>

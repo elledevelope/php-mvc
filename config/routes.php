@@ -11,5 +11,6 @@ $routes =  [
     ['articles', 'article', 'index'],
     ['article', 'article', 'show', ['id']], //single article page
     ['delete', 'article', 'delete', ['id']], //delete
-    ['add', 'article', 'add'] //form
+    ['add', 'article', 'add'], //form add
+    ['edit', 'article', 'edit', ['id']] //form edit
 ];
