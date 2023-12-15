@@ -15,6 +15,10 @@
   <header>
     <?php include 'partials/nav.php' ?>
   </header>
+  <div class="container mt-3">
+      <button id="toggleBtn" class="btn btn-primary">Dark Mode</button>
+    </div>
+
 
   <div class="container">
     <?= $content; ?>
