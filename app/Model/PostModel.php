@@ -13,9 +13,9 @@ class PostModel extends Model
 
     public static function insert($post)
     {
-        var_dump($post);
+        // var_dump($post);
         App::getDatabase()->prepareInsert(
-            'INSERT INTO ' . self::$table . ' (titre, content,user_id) VALUES (?,?, ?) ',
+            'INSERT INTO ' . self::$table . ' (titre,content,user_id) VALUES (?,?, ?) ',
             [
                 $post['titre'],
                 $post['content'],

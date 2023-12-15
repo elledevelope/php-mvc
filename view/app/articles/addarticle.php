@@ -23,7 +23,7 @@
         <br>
 
         <div class="mb-3">
-            <?= $formAdd->select('auteur',$users,'name','', 'user_id') ?>
+            <?= $formAdd->select('auteur',$users,'name','','user_id') ?>
         </div>
         <br>
 
