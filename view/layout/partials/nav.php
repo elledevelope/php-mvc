@@ -19,6 +19,9 @@
                     <a class="text-light" href="<?= $view->path('about'); ?>">About</a>
                 </li>
                 <li class="nav-item">
+                    <a class="text-light" href="<?= $view->path('add'); ?>">Add Article</a>
+                </li>
+                <li class="nav-item">
                     <a class="text-light" href="<?= $view->path('single', array(12)); ?>">Single</a>
                 </li>
                 <li class="nav-item">
