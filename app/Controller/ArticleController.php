@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Weblitzer\Controller;
 use App\Model\PostModel;
 use App\Model\UserModel;
+use App\Service\Form;
 
 
 /**
@@ -29,6 +30,18 @@ class ArticleController extends Controller
             'articlesCount' => $articlesCount,
         ));
     }
+
+    //FORM to add article:
+    public function add()
+    {
+        // $this->dd('add');
+        $errors = [];
+        $formAdd = new Form($errors);
+        $this->render('app.articles.addarticle', array(
+            'formAdd' => $formAdd,
+        ));
+    }
+
 
     public function show($id)
     {
