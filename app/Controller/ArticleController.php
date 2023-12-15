@@ -33,19 +33,19 @@ class ArticleController extends Controller
     public function show($id)
     {
         // $this->dd($id);
-        $articleDelete = $this->isArticleExist($id);
-        $article = PostModel::findById($id);
+        $article = $this->isArticleExist($id); // instead of $article = PostModel::findById($id);
+
         // $this->dd($article);
         $user = new UserModel;
-  
+
         $this->render('app.articles.show', array(
             'article' => $article,
             'user' => $user,
         ));
     }
 
-    public function delete($id)//delete btn
-    { 
+    public function delete($id) //delete btn
+    {
         // $this->dd($id);
 
         $articleDelete = $this->isArticleExist($id);
@@ -63,6 +63,5 @@ class ArticleController extends Controller
         } else {
             return $article;
         }
-      
     }
 }

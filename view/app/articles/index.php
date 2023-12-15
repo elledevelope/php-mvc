@@ -1,5 +1,5 @@
 <h2 class="card-title">Articles :</h2>
-<p class="text-body-secondary">il y a <?= $articlesCount ?> articles</p>
+<p class="text-body-secondary">il y a <?= $articlesCount ?> article(s)</p>
 <ul>
     <?php
     foreach ($articles as $article) :
