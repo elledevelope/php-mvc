@@ -17,7 +17,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = PostModel::all(); //pour lister tous les articles
+        $articles = PostModel::allOrder('DESC'); //pour lister tous les articles
         // $this->dd($articles);
 
         $user = new UserModel; //pour lister tous les users
