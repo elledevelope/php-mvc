@@ -16,6 +16,9 @@
     </button>
 
     <button class="btn btn-danger" type="button">
-    <a class="text-light" href="<?= $view->path('delete', [$article->id]); ?>">Supprimer</a>        
+        <a class="text-light" href="<?= $view->path('delete', [$article->id]); ?>" onclick="return confirm('Etes-vous certainde vouloir supprimer cette article?')">
+            Supprimer
+        </a>
+
     </button>
 </div>
