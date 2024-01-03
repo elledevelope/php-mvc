@@ -32,12 +32,11 @@ class ArticleController extends Controller
         ));
     }
 
-    //FORM to add article:
+// ----------------------------------------------------- add ----------------------------------------------------- //
     public function add()
     {
         // $this->dd('add');
         $errors = [];
-
 
         //test validation formulaire:
         if (!empty($_POST['submitted'])) :
@@ -46,8 +45,8 @@ class ArticleController extends Controller
             // $this->dd($postArticle);   
 
             $validateArticle = new Validation;
-            $errors['titre'] = $validateArticle->textValid($postArticle['titre'], 'titre', 4, 10);
-            $errors['content'] = $validateArticle->textValid($postArticle['content'], 'contenu', 10, 500);
+            $errors['titre'] = $validateArticle->textValid($postArticle['titre'], 'titre', 4, 30);
+            $errors['content'] = $validateArticle->textValid($postArticle['content'], 'contenu', 5, 500);
 
             if ($validateArticle->IsValid($errors)) :
                 //insertion des données du formulaire en bd:
@@ -55,8 +54,6 @@ class ArticleController extends Controller
                 $this->redirect('articles');
             endif;
         endif;
-
-
 
         $formAdd = new Form($errors);
         $users = UserModel::all();
@@ -67,7 +64,7 @@ class ArticleController extends Controller
         ));
     }
 
-    //FORM to update article:
+// ----------------------------------------------------- edit ----------------------------------------------------- //
     public function edit($id)
     {
         $articleEdit = $this->isArticleExist($id); 
@@ -78,14 +75,14 @@ class ArticleController extends Controller
             $postArticleEdit = $this->cleanXss($_POST);
 
             $validateArticleEdit = new Validation;
-            $errors['titre'] = $validateArticleEdit->textValid($postArticleEdit['titre'], 'titre', 4, 10);
-            $errors['content'] = $validateArticleEdit->textValid($postArticleEdit['content'], 'contenu', 10, 500);
+            $errors['titre'] = $validateArticleEdit->textValid($postArticleEdit['titre'], 'titre', 4, 30);
+            $errors['content'] = $validateArticleEdit->textValid($postArticleEdit['content'], 'contenu', 5, 500);
 
             if ($validateArticleEdit->IsValid($errors)) :
                 //insertion des données du formulaire en bd:
                     
-                // PostModel::update($postArticleEdit);
-                // $this->redirect('articles');
+                PostModel::update($postArticleEdit, $id);
+                $this->redirect('articles');
             endif;
         endif;
 
@@ -97,6 +94,7 @@ class ArticleController extends Controller
         ));
     }
 
+// ----------------------------------------------------- show ----------------------------------------------------- //
     public function show($id)
     {
         // $this->dd($id);
@@ -111,15 +109,17 @@ class ArticleController extends Controller
         ));
     }
 
+// ----------------------------------------------------- delete ----------------------------------------------------- //
     public function delete($id) //delete btn
     {
         // $this->dd($id);
-
         $articleDelete = $this->isArticleExist($id);
         PostModel::delete($id);
         $this->redirect('articles');
     }
 
+
+// ----------------------------------------------------- isArticleExist ----------------------------------------------------- //
     public function isArticleExist($id)
     {
         $article = PostModel::findById($id);

@@ -15,11 +15,24 @@ class PostModel extends Model
     {
         // var_dump($post);
         App::getDatabase()->prepareInsert(
-            'INSERT INTO ' . self::$table . ' (titre,content,user_id) VALUES (?,?, ?) ',
+            'INSERT INTO ' . self::$table . ' (titre,content,user_id) VALUES (?,?,?) ',
             [
                 $post['titre'],
                 $post['content'],
-                $post['auteur']
+                $post['auteur']              
+            ]
+        );
+    }
+
+
+    public static function update($post, $id)
+    {
+        // var_dump($post);
+        App::getDatabase()->prepareInsert(
+            'UPDATE  ' . self::$table . ' SET titre = ?, content = ? WHERE id = ' . $id ,
+            [
+                $post['titre'],
+                $post['content']
             ]
         );
     }
